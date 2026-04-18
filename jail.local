@@ -1,0 +1,14 @@
+# jail.local
+# Fail2ban configuration for SSH protection
+
+[DEFAULT]
+bantime  = 1h
+findtime = 10m
+maxretry = 5
+backend  = systemd
+ignoreip = 127.0.0.1/8
+
+[sshd]
+enabled  = true
+port     = ssh
+logpath  = %(sshd_log)s
