@@ -25,11 +25,20 @@
 ## Clone the repo
 
 1. Create a local `/opt/ansible/` (or wherever)
+
 `sudo mkdir -p /opt/ansible`
+
 `sudo chown -R $USER:$USER /opt/ansible`
+
 1. Clone repo to `/opt/ansible/`
+
 `cd /opt/ansible`
+
 `git clone git@gitlab.com:csir-nicis/chpc/hpc-ecosystems/infrastructure/ansible-lockdown.git`
+
+OR
+
+`git clone https://github.com/brattex/Ansible-Lockdown.git`
 
 ## Run the playbook
 
