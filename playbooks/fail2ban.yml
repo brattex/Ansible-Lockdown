@@ -1,37 +1,5 @@
-# fail2ban_setup.yml
-# Apply Fail2ban hardening to the local machine
 ---
-- name: Harden local machine with Fail2ban
-  hosts: all
+- hosts: localhost
   become: yes
-
-  tasks:
-    # Install Fail2ban package
-    - name: Install Fail2ban
-      package:
-        name: fail2ban
-        state: present
-
-    # Deploy jail.local configuration
-    - name: Deploy jail.local
-      copy:
-        src: jail.local
-        dest: /etc/fail2ban/jail.local
-        owner: root
-        group: root
-        mode: '0644'
-      notify: restart fail2ban
-
-    # Ensure Fail2ban is enabled and running
-    - name: Enable and start Fail2ban
-      service:
-        name: fail2ban
-        state: started
-        enabled: yes
-
-  handlers:
-    # Restart Fail2ban when configuration changes
-    - name: restart fail2ban
-      service:
-        name: fail2ban
-        state: restarted
+  roles:
+    - fail2ban
