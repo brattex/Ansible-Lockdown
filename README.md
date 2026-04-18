@@ -42,4 +42,4 @@ OR
 
 ## Run the playbook
 
-1. `ansible-playbook fail2ban_setup.yml`
+1. `sudo ansible-playbook fail2ban_setup.yml`
