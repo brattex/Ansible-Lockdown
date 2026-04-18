@@ -43,3 +43,17 @@ OR
 ## Run the playbook
 
 1. `sudo ansible-playbook fail2ban_setup.yml`
+
+## verify
+
+- `watch 'sudo fail2ban-client status sshd'`
+
+## verify without SSH Key
+
+`ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no rocky@154.114.52.57`
+
+```
+rocky@154.114.52.57: Permission denied (publickey,gssapi-keyex,gssapi-with-mic).
+```
+
+
