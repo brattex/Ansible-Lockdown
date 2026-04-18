@@ -11,6 +11,7 @@
     owner: root
     group: root
     mode: '0644'
+  notify: restart fail2ban
 
 - name: Ensure fail2ban is enabled and running
   service:
